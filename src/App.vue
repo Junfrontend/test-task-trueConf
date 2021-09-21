@@ -1,17 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <trafficLight msg="Test task for TrueConf company"/>
+  <author />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import trafficLight from "./components/trafficLight.vue";
+import author from "./components/author.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    trafficLight,
+    author,
+  },
+  methods: {
+     mounted() {
+      console.log(window.location.pathname)
+     if (window.location.pathname === '/yellow') {
+       console.log('Желтый!')
+     }
+    },
   }
-}
+};
 </script>
 
 <style>
